@@ -22,6 +22,8 @@ LABEL com.redhat.dev-mode="DEV_MODE:false" \
 # Switch to root for package installs
 USER 0
 
+#Copy CA Cert
+COPY ./ssl/ /opt/app-root/etc/trust_ssl_dirs
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH.
 COPY ./s2i/bin/ /usr/libexec/s2i
 
